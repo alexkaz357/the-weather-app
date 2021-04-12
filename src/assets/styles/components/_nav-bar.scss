@@ -1,0 +1,138 @@
+.nav-bar {
+  padding-top: 50px;
+  color: #000;
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  transition: color 0.8s linear;
+
+  &.dark-mode {
+    color: #fff;
+    transition: color 0.8s linear;
+  }
+
+  & .logo {
+    font-family: "Fredoka One", cursive;
+    font-size: 30px;
+    font-weight: 100;
+    cursor: pointer;
+    opacity: 0.8;
+  }
+
+  & .menu-btn {
+    display: none;
+  }
+
+  & .close-btn {
+    display: none;
+  }
+
+  & p {
+    font-size: 18px;
+    cursor: pointer;
+
+    &:hover {
+      color: $themeClr;
+      transition: color 0.8s;
+    }
+  }
+
+  & .weather-link {
+    margin-right: 40px;
+  }
+
+  & .screen {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0.8s, opacity 0.8s linear;
+    z-index: 1;
+  }
+}
+
+@media (max-width: 550px) {
+  .nav-bar {
+    flex-direction: column;
+    text-align: center;
+    padding-top: 100px;
+
+    & .mode {
+      margin-top: 10px;
+    }
+
+    & .menu-btn {
+      display: block;
+      width: min-content;
+      margin: auto;
+      position: absolute;
+      top: 40px;
+      right: 0;
+      left: 0;
+
+      & .menu-btn-icon {
+        border: 1px solid #000;
+        border-radius: 100%;
+        padding: 10px 11.5px;
+        transition: border 0.8s linear;
+
+        &.dark-mode {
+          border: 1px solid #fff;
+        }
+      }
+    }
+
+    & .close-btn {
+      display: block;
+      position: absolute;
+      top: 40px;
+      border: 1px solid #000;
+      border-radius: 100%;
+      padding: 10px 15px;
+      transition: border 0.8s linear;
+
+      &.dark-mode {
+        border: 1px solid #fff;
+      }
+    }
+
+    & .links {
+      align-items: center;
+      position: fixed;
+      flex-direction: column;
+      background-color: gray;
+      width: 50%;
+      height: 100%;
+      right: 0;
+      top: 0;
+      padding-top: 30%;
+      z-index: 1;
+      transition: right 0.8s;
+
+      &.closed {
+        right: -50%;
+        transition: right 0.8s;
+      }
+
+      & .weather-link {
+        margin: 0 0 50px 0;
+      }
+
+      & .favorites-link {
+        margin: 0;
+      }
+    }
+  }
+
+  body.menu-open .screen {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.8s linear;
+  }
+}

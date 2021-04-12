@@ -1,0 +1,65 @@
+.favorites-list {
+  padding-top: 50px;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  & .favorites-preview {
+    width: 200px;
+    min-height: 190px;
+    text-align: center;
+    background-color: rgba($color: #000, $alpha: 0.2);
+    color: #fff;
+    border-radius: 5px;
+    padding: 30px 10px;
+    letter-spacing: 2px;
+    transition: all 0.8s linear;
+    margin: 10px;
+
+    &:hover {
+      background-color: rgba($color: #000, $alpha: 0.3);
+      cursor: pointer;
+    }
+
+    &.dark-mode {
+      background-color: rgba($color: #fff, $alpha: 0.2);
+      color: #fff;
+      transition: all 0.8s linear;
+    }
+
+    & .content {
+      height: 100%;
+
+      & .favorite-city-name {
+        font-size: 20px;
+      }
+
+      & .favorite-city-description {
+        font-size: 12px;
+      }
+
+      & .favorite-city-temperature {
+        font-size: 30px;
+      }
+    }
+  }
+}
+
+@media (max-width: 550px) {
+  .favorites-list {
+    flex-direction: column;
+    padding: 20px 50px 50px;
+
+    & .favorites-preview {
+      width: auto;
+      margin: 0;
+
+      & .content {
+        height: -webkit-fill-available;
+      }
+    }
+
+    & .favorites-preview:not(:last-child) {
+      margin-bottom: 30px;
+    }
+  }
+}

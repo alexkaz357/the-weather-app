@@ -1,0 +1,198 @@
+.weather-details {
+  margin-top: 50px;
+  text-align: center;
+
+  & .title-city {
+    font-family: "Nunito";
+    font-size: 40px;
+    text-transform: capitalize;
+    letter-spacing: 5px;
+    margin-right: 20px;
+    display: inline;
+    color: #000;
+    transition: color 0.8s linear;
+
+    &.dark-mode {
+      color: #fff;
+      transition: color 0.8s linear;
+    }
+  }
+
+  & .heart {
+    color: #ddd;
+    font-size: 30px;
+    display: inline-block;
+
+    &:hover {
+      animation: heartbeat 1s normal;
+    }
+
+    @keyframes heartbeat {
+      0% {
+        transform: scale(1);
+      }
+  
+      20% {
+        transform: scale(1.25);
+      }
+  
+      40% {
+        transform: scale(1);
+      }
+  
+      60% {
+        transform: scale(1.25);
+      }
+  
+      80% {
+        transform: scale(1);
+      }
+  
+      100% {
+        transform: scale(1);
+      }
+    }
+  }
+
+  & .favorite {
+    color: #ff414d;
+  }
+
+  & .fav-btn {
+    display: block;
+    margin: 20px auto 0;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    line-height: 16px;
+    padding: 15px 30px;
+    background-color: rgba($color: #000, $alpha: 0.2);
+    color: #fff;
+    border: 2px solid rgba($color: #000, $alpha: 0.2);
+    border-radius: 3px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: all 0.8s linear;
+
+    &:hover {
+      background-color: rgba($color: #fff, $alpha: 0.2);
+      color: #fff;
+      border: 2px solid rgba($color: #fff, $alpha: 0.2);
+    }
+
+    &.dark-mode {
+      background-color: rgba($color: #fff, $alpha: 0.2);
+      color: #fff;
+      border: 2px solid rgba($color: #fff, $alpha: 0.2);
+      transition: all 0.8s linear;
+    }
+
+    &.dark-mode:hover {
+      background-color: rgba($color: gray, $alpha: 0.2);
+      border: 2px solid rgba($color: gray, $alpha: 0.2);
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  & .weather-list {
+    justify-content: space-between;
+    margin-top: 50px;
+
+    & .weather-preview {
+      min-width: 200px;
+      min-height: 190px;
+      text-align: center;
+      background-color: rgba($color: #000, $alpha: 0.2);
+      color: #fff;
+      border-radius: 5px;
+      padding: 10px 10px;
+      letter-spacing: 2px;
+      transition: all 0.8s linear;
+
+      &:hover {
+        background-color: rgba($color: #000, $alpha: 0.3);
+      }
+
+      &.dark-mode {
+        background-color: rgba($color: #fff, $alpha: 0.2);
+        color: #fff;
+        transition: all 0.8s linear;
+      }
+
+      &.dark-mode:hover {
+        background-color: rgba($color: #fff, $alpha: 0.3);
+      }
+
+      & img {
+        height: 70px;
+      }
+
+      & p {
+        margin-top: 10px;
+        font-size: 12px;
+      }
+
+      & .temperature {
+        font-size: 30px;
+      }
+    }
+  }
+
+  & .message-show {
+    padding-top: 20px;
+    letter-spacing: 3px;
+    color: #000;
+    transition: color 0.8s linear;
+
+    &.dark-mode {
+      color: #fff;
+      transition: color 0.8s linear;
+    }
+
+    & .message {
+      text-transform: uppercase;
+      text-align: initial;
+    }
+
+    & .show {
+      text-align: end;
+      min-width: 127px;
+
+      &:hover {
+        cursor: pointer;
+        color: $themeClr;
+        transition: color 0.8s linear;
+      }
+    }
+  }
+}
+
+@media (max-width: 550px) {
+  .weather-details {
+    .weather-list {
+      display: block;
+      padding: 0 50px;
+
+      & .weather-preview:not(:last-child) {
+        margin-bottom: 20px;
+      }
+    }
+
+    & .message-show {
+      display: block;
+      padding-bottom: 50px;
+
+      & .message {
+        margin-bottom: 20px;
+        text-align: center;
+      }
+
+      & .show {
+        text-align: center;
+      }
+    }
+  }
+}

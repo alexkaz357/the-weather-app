@@ -1,0 +1,22 @@
+// Setup
+@import "setup/functions.scss";
+@import "setup/mixins.scss";
+@import "setup/typography.scss";
+@import "setup/variables.scss";
+
+// Basics
+@import "basics/base.scss";
+@import "basics/helpers.scss";
+@import "basics/layout.scss";
+
+//pages
+@import "./pages/weather-app";
+@import "./pages/favorites";
+
+// Components
+@import "./components/nav-bar";
+@import "./components/search";
+@import "./components/weather-details";
+@import "./components/favorites-list";
+@import "./components/mode";
+@import "./components/loader";

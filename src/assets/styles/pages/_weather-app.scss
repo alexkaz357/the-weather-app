@@ -1,0 +1,10 @@
+.weather-app {
+  min-height: 100vh;
+  padding-top: 120px;
+}
+
+@media (max-width: 550px) {
+  .weather-app {
+    padding-top: 200px;
+  }
+}

@@ -1,0 +1,115 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  position: relative;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.clouds-container {
+  & .clouds {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    background: #265293 url(../../img/clouds.png);
+    background-size: cover;
+    animation: clouds 500s linear infinite;
+    z-index: -1;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100%;
+      height: 100%;
+      background: rgba($color: #000000, $alpha: 0.2);
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  @keyframes clouds {
+    0% {
+      background-position: 0px;
+    }
+    100% {
+      background-position: 5440px;
+    }
+  }
+}
+
+.stars-container {
+  & .stars,
+  & .twinkling {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  & .stars {
+    background: #000 url("../../img/stars.png") repeat top center;
+    z-index: -3;
+  }
+
+  & .twinkling {
+    background: transparent url("../../img/twinkling.png") repeat top center;
+    z-index: -2;
+    animation: move-twink-back 200s linear infinite;
+  }
+
+  @keyframes move-twink-back {
+    from {
+      background-position: 0 0;
+    }
+    to {
+      background-position: -10000px 5000px;
+    }
+  }
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  background-color: rgba(0, 0, 0, 0);
+  -webkit-border-radius: 100px;
+}
+
+::-webkit-scrollbar:hover {
+  background-color: rgba(0, 0, 0, 0.09);
+}
+
+::-webkit-scrollbar-thumb:vertical {
+  background: rgba(0, 0, 0, 0.25);
+  -webkit-border-radius: 100px;
+}
+
+::-webkit-scrollbar-thumb:vertical:active {
+  -webkit-border-radius: 100px;
+}
